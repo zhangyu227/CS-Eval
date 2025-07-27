@@ -1,5 +1,0 @@
-MyLogger - DEBUG - 这是一个 debug 级别的日志信息
-MyLogger - INFO - 这是一个 info 级别的日志信息
-MyLogger - WARNING - 这是一个 warning 级别的日志信息
-MyLogger - ERROR - 这是一个 error 级别的日志信息
-MyLogger - CRITICAL - 这是一个 critical 级别的日志信息
