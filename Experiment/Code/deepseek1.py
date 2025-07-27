@@ -10,8 +10,8 @@ from tqdm import tqdm
 from typing import List, Tuple
 
 # =================配置区域=================
-API_KEY = "sk-drhzpxtpimowjzralbkvamfrgkwzolmepuvekuxsupabgsot"
-API_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
+API_KEY = ""
+API_ENDPOINT = ""
 MAX_WORKERS = 5  # 同时处理的最大请求数
 REQUESTS_PER_MINUTE = 60  # API速率限制
 RETRY_TIMES = 3  # 失败重试次数
