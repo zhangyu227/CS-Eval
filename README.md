@@ -49,7 +49,7 @@
 
 | 类型 | 标题 | 链接 |
 |------|------|------|
-| 📄 论文 / 项目报告 | 大语言模型自动评分与安全优化研究 | [点击查看](https://scholar.google.com/citations?user=viq78kMAAAAJ&hl=zh-CN) |
+| 📄 论文 / 项目报告 | 大语言模型自动评分与安全优化研究 | [点击查看](https://scholar.google.com) |
 
 > 请将上面的 `链接` 替换成你上传到 GitHub 或网盘的论文链接。
 
@@ -83,8 +83,8 @@
 ## 📬 联系方式
 
 如需交流或引用，请联系作者：  
-📧 邮箱: stephenyu318@gmail.com  
-📎 GitHub: [https://github.com/zhangyu227/CS-Eval](https://github.com/zhangyu227/CS-Eval)
+📧 邮箱: 
+📎 GitHub: [https://github.com/MetaASI/CS-Eval](https://github.com/MetaASI/CS-Eval)
 
 ---
 
