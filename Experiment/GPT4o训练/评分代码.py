@@ -44,9 +44,9 @@
    "outputs": [],
    "source": [
     "# 设置 OPENAI_API_KEY 环境变量\n",
-    "os.environ[\"OPENAI_API_KEY\"] = \"sk-ogeSpzeqrdLi5Iry16E7723b665d46BcA57639152f6b4347\"\n",
+    "os.environ[\"OPENAI_API_KEY\"] = \"\"\n",
     "# 设置 OPENAI_BASE_URL 环境变量\n",
-    "os.environ[\"OPENAI_BASE_URL\"] = \"https://api.xiaoai.plus/v1\""
+    "os.environ[\"OPENAI_BASE_URL\"] = \"\""
    ]
   },
   {
