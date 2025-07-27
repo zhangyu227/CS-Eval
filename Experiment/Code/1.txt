@@ -1,0 +1,96 @@
+
+
+# Python 项目执行教程
+
+## 前提条件
+
+在开始之前，请确保你已经安装了以下软件：
+1. **Python**：建议使用 Python 3.6 或以上版本。你可以在 [Python 官网](https://www.python.org/downloads/) 下载并安装。
+2. **pip**：Python 包管理工具，通常随 Python 一起安装。
+
+## 步骤一：设置虚拟环境
+
+虚拟环境可以帮助我们隔离项目的依赖关系，避免不同项目之间的冲突。
+
+1. 打开终端（Windows 用户可以使用命令提示符或 PowerShell）。
+2. 导航到你的项目目录。例如：
+    ```sh
+    cd path/to/your/project
+    ```
+3. 创建虚拟环境：
+    ```sh
+    python -m venv venv
+    ```
+    这里 `venv` 是虚拟环境的名称，你可以根据需要更改。
+
+4. 激活虚拟环境：
+    - 对于 Windows：
+        ```sh
+        .\venv\Scripts\activate
+        ```
+    - 对于 macOS 和 Linux：
+        ```sh
+        source venv/bin/activate
+        ```
+
+## 步骤二：安装依赖
+
+你的项目中应该有一个 `requirements.txt` 文件，其中列出了所有需要安装的依赖包。
+
+1. 确保虚拟环境已激活（你应该能看到命令行前面有 `(venv)` 的提示）。
+2. 运行以下命令来安装依赖：
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+## 步骤三：运行 Python 文件
+
+在安装完所有依赖后，你就可以运行你的 Python 文件了。
+
+1. 确保虚拟环境已激活。
+2. 使用以下命令运行你的 Python 文件：
+    ```sh
+    python main.py
+    ```
+    这里 `main.py` 是你要运行的 Python 文件的名称。
+
+## 示例
+
+假设你的项目目录结构如下：
+
+```
+my_project/
+│
+├── main.py
+├── requirements.txt
+└── ...
+```
+
+### 完整操作步骤：
+
+1. 打开终端并导航到 `my_project` 目录：
+    ```sh
+    cd path/to/my_project
+    ```
+2. 创建并激活虚拟环境：
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # macOS/Linux
+    # 或者
+    .\venv\Scripts\activate  # Windows
+    ```
+3. 安装依赖：
+    ```sh
+    pip install -r requirements.txt
+    ```
+4. 运行 Python 文件：
+    ```sh
+    python main.py
+    ```
+
+## 额外提示
+
+- 如果你想退出虚拟环境，可以使用以下命令：
+    ```sh
+    deactivate
+    ```

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>大模型评估数据大屏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #001628;
+      color: white;
+      font-family: 'Microsoft YaHei', sans-serif;
+      overflow: hidden;
+    }
+    .header {
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      color: #0ff;
+      background: linear-gradient(to right, #002244, #001628);
+      border-bottom: 1px solid #0ff;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      height: calc(100vh - 80px);
+      padding: 20px;
+      gap: 20px;
+    }
+    .panel {
+      background-color: #002b45;
+      border: 1px solid #00bfff;
+      border-radius: 10px;
+      padding: 10px;
+      position: relative;
+    }
+    .panel-title {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 18px;
+      color: #00ffff;
+    }
+    .risk-level {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="header">公安部科技中心 · 大模型六维风险可视化评估</div>
+<div class="container" id="chartContainer"></div>
+
+<script>
+const dimensions = ["事实谬误", "讹言谎语", "意识形态", "伦理道德", "社会偏见", "隐私安全"];
+const riskColors = {
+    "无风险 ✅": '#00ff66',
+    "中风险 ⚠️": '#ffcc00',
+    "高风险 ❌": '#ff0033'
+};
+
+// 模拟后端返回的风险数据（你应通过后端 API 获取）
+const riskData = {
+    "事实谬误": { score: 28, max: 30, risk: "无风险 ✅" },
+    "讹言谎语": { score: 24, max: 30, risk: "中风险 ⚠️" },
+    "意识形态": { score: 20, max: 30, risk: "高风险 ❌" },
+    "伦理道德": { score: 27, max: 30, risk: "无风险 ✅" },
+    "社会偏见": { score: 22, max: 30, risk: "中风险 ⚠️" },
+    "隐私安全": { score: 18, max: 30, risk: "高风险 ❌" },
+};
+
+const container = document.getElementById("chartContainer");
+
+function createGaugeChart(id, title, value, risk) {
+    const chart = echarts.init(document.getElementById(id));
+    const option = {
+        series: [
+            {
+                type: 'gauge',
+                radius: '100%',
+                startAngle: 180,
+                endAngle: 0,
+                min: 0,
+                max: 100,
+                axisLine: {
+                    lineStyle: {
+                        width: 20,
+                        color: [
+                            [0.8, '#ff0033'],
+                            [0.9, '#ffcc00'],
+                            [1, '#00ff66']
+                        ]
+                    }
+                },
+                pointer: {
+                    show: true,
+                    width: 4,
+                    length: '60%'
+                },
+                detail: {
+                    valueAnimation: true,
+                    formatter: '{value}%',
+                    fontSize: 20,
+                    offsetCenter: [0, '40%']
+                },
+                data: [{ value: value }]
+            }
+        ]
+    };
+    chart.setOption(option);
+}
+
+// 创建每个维度 panel 和图表
+Object.keys(riskData).forEach((dim, i) => {
+    const id = `chart-${i}`;
+    const panel = document.createElement('div');
+    panel.className = 'panel';
+    panel.innerHTML = `
+      <div class="panel-title">${dim}</div>
+      <div class="risk-level" style="color:${riskColors[riskData[dim].risk]}">${riskData[dim].risk}</div>
+      <div id="${id}" style="width:100%;height:90%;margin-top:30px;"></div>
+    `;
+    container.appendChild(panel);
+
+    const percent = Math.round((riskData[dim].score / riskData[dim].max) * 100);
+    setTimeout(() => createGaugeChart(id, dim, percent, riskData[dim].risk), 100);
+});
+</script>
+</body>
+</html>
