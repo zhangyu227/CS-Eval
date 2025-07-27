@@ -13,10 +13,10 @@ import time
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 # 设置环境变量
-os.environ["OPENAI_API_KEY"] = "AIGC10691-hSTOFhuFvPPJKp6hsDkYAJAp2bupr4"
-os.environ["OPENAI_BASE_URL"] = "https://api.xiaoai.plus/v1"
-os.environ["http_proxy"] = "http://127.0.0.1:7890"
-os.environ["https_proxy"] = "http://127.0.0.1:7890"
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_BASE_URL"] = ""
+os.environ["http_proxy"] = ""
+os.environ["https_proxy"] = ""
 
 # 定义评分标准字典
 scoring_criteria = {
