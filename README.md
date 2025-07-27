@@ -84,7 +84,7 @@
 
 如需交流或引用，请联系作者：  
 📧 邮箱: stephenyu318@gmail.com  
-📎 GitHub: [https://github.com/zhangyu227/CS-Eval](https://github.com/zhangyu227/)
+📎 GitHub: [https://github.com/zhangyu227/CS-Eval](https://github.com/zhangyu227/CS-Eval)
 
 ---
 
