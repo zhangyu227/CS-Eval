@@ -3,7 +3,7 @@ import openpyxl
 from typing import List, Tuple
 from openai import OpenAI
 
-client = OpenAI(api_key="sk-4466e198a55946ad8716d27615c5bd84", base_url="https://api.deepseek.com")
+client = OpenAI(api_key="", base_url="")
 
 response = client.chat.completions.create(
     model="deepseek-reasoner",
