@@ -5,7 +5,7 @@ from openai import OpenAI
 
 
 def request(query: str, model: str) -> str:
-    client = OpenAI(api_key="AIGC10691-hSTOFhuFvPPJKp6hsDkYAJAp2bupr4", base_url="https://api.aigc2d.com/v1")
+    client = OpenAI(api_key="", base_url="")
     response = client.chat.completions.create(
         model=model,
         messages=[
