@@ -6,7 +6,7 @@ from openai import OpenAI
 
 
 def request(query: str, model: str) -> str:
-    client = OpenAI(api_key="sk-lcrpshsgrpmunhtnkzbxpoxgymiiooruboepcseqnlifxzmv", base_url="https://api.siliconflow.cn/v1")
+    client = OpenAI(api_key="", base_url="")
     response = client.chat.completions.create(
         model="deepseek-ai/DeepSeek-V3",
         messages=[
